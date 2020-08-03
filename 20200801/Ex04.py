@@ -1,34 +1,39 @@
 #04
 
-sum_name = 0
-sum_score = 0
-max_score = 0
-max_name =''
-min_score = 100
-min_name =''
+hg = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+print(hg)
 
-f = open('data_a.txt', "r", encoding = "utf_8")
+f = open('data_h.txt', "r", encoding = "utf_8")
 while True:
     line = f.readline()
     if line:
-        l = line.split(',')
+        tmp = int(line)
 
-        sum_name += 1
-
-        l[1] = int(l[1])
-        sum_score += l[1]
-
-        if l[1] >= max_score:
-            max_name = l[0]
-            max_score = l[1]
-
-        if l[1] <= min_score:
-            min_name = l[0]
-            min_score = l[1]
+        if tmp < 10:
+            hg[0] += 1
+        elif tmp < 20:
+            hg[1] += 1
+        elif tmp < 30:
+            hg[2] += 1
+        elif tmp < 40:
+            hg[3] += 1
+        elif tmp < 50:
+            hg[4] += 1
+        elif tmp < 60:
+            hg[5] += 1
+        elif tmp < 70:
+            hg[6] += 1
+        elif tmp < 80:
+            hg[7] += 1
+        elif tmp < 90:
+            hg[8] += 1
+        else:
+            hg[9] += 1
     else:
         break
 
-ave = round((sum_score/sum_name), 1)
-print('平均点:', ave)
-print('最高得点:', max_name, max_score, '点')
-print('最低得点:', min_name, min_score, '点')
+for i in range(len(hg)):
+    tmp = ''
+    for j in range(hg[i]):
+        tmp += '*'
+    print(i*10, "|", tmp)

@@ -1,9 +1,9 @@
 #01
 import random
 
-sum_correct = 0     #正解数
+sum_correct = 0
 
-for i in range(10):  #10回ループ
+for i in range(10):
     num1 = random.randint(10,99)
     num2 = random.randint(10,99)
     answer = int(input(f'{num1} + {num2} = ? '))
